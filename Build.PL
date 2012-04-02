@@ -19,8 +19,8 @@ my $builder = Alien::Base::ModuleBuild->new(
   alien_repository => {
     protocol => 'http',
     host     => 'www.haible.de',
-    location => '/bruno/gnu',
-    pattern  => qr/^ffcall-([\d\.]+)\.tar\.gz$/,
+    location => '/bruno/packages-ffcall-README.html',
+    pattern  => qr/ffcall-([\d.]+)\.tar\.gz$/,
   },
   alien_build_commands => [
     '%pconfigure --prefix=%s --enable-shared', 
