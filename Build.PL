@@ -17,9 +17,7 @@ my $builder = Alien::Base::ModuleBuild->new(
   dist_author => 'David Mertens <dcmertens.perl@gmail.com>',
   alien_name => 'ffcall',
   alien_repository => {
-    protocol => 'http',
-    host     => 'www.haible.de',
-    location => '/bruno/packages-ffcall-README.html',
+    protocol => 'local',
     pattern  => qr/ffcall-([\d.]+)\.tar\.gz$/,
   },
   alien_build_commands => [
