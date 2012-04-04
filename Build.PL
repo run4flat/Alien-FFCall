@@ -25,5 +25,6 @@ my $builder = Alien::Base::ModuleBuild->new(
     'make',
     'make install'
   ],
+  alien_provides_libs => '-lavcall -lcallback',
 );
 $builder->create_build_script;
