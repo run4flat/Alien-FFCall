@@ -32,7 +32,7 @@ your Build.PL file should say:
  
  # Create the build script:
  my $builder = Module::Build->new(
-     module_name => 'FFI',
+     module_name => 'My::FFCall::Wrapper',
      extra_compiler_flags => $alien->cflags(),
      extra_linker_flags => $alien->libs(),
      configure_requires => {
