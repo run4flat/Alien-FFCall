@@ -9,3 +9,93 @@ $VERSION = eval $VERSION;
 use parent 'Alien::Base';
 
 1;
+
+__END__
+
+=head1 NAME
+
+Alien::FFCall - Alien library for FFCall
+
+=head1 SYNOPSIS
+
+I would encourage you to look at FFI.pm if you want a Perl-level wrapper to
+FFCall. However, if you want to write your own XS-based interface to FFCall,
+your Build.PL file should say:
+
+ use strict;
+ use warnings;
+ use Module::Build;
+ use Alien::FFCall;
+ 
+ # Retrieve the Alien::FFCall configuration:
+ my $alien = Alien::FFCall->new;
+ 
+ # Create the build script:
+ my $builder = Module::Build->new(
+     module_name => 'FFI',
+     extra_compiler_flags => $alien->cflags(),
+     extra_linker_flags => $alien->libs(),
+     configure_requires => {
+         'Alien::FFCall' => 0,
+     },
+ );
+ $builder->create_build_script;
+
+Your module (.pm) file should look like this:
+
+ package My::FFCall::Wrapper;
+ 
+ use strict;
+ use warnings;
+ 
+ use Alien::FFCall;
+ 
+ our $VERSION = '0.01';
+ 
+ require XSLoader;
+ XSLoader::load('My::FFCall::Wrapper');
+ 
+ ... perl-level code goes here ...
+
+Your XS file should look like this:
+
+ #include "EXTERN.h"
+ #include "perl.h"
+ #include "XSUB.h"
+ 
+ #include <avcall.h>
+ #include <callback.h>
+ 
+ ... normal XS stuff goes here, making use of the FFCall API ...
+
+=head1 DESCRIPTION
+
+Alien::FFCall provides a CPAN distribution for the FFCall library. In other
+words, it installs FFCall's library in a non-system folder and provides you with
+the details necessary to include in and link to your C/XS code.
+
+=head1 AUTHOR
+
+David Mertens, C<< <dcmertens.perl at gmail.com> >>
+
+=head1 BUGS
+
+The best place to report bugs or get help for this module is to file Issues on
+github:
+
+    https://github.com/run4flat/Alien-FFI/issues
+
+Note that I do not maintain FFCall itself, only the Alien module for it. As I
+understand it, FFCall is no longer maintained. :-(
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2012 Northwestern University
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+

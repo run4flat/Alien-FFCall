@@ -1,11 +1,18 @@
+NAME
+
 Alien::FFCall - an Alien package for the FFCall library (predecessor to libffi)
+
+DESCRIPTION
 
 This Alien package, built on Alien::Base, provides the FFCall library. FFCall
 has been surpassed by libffi and is rather hard to obtain these days, but Perl's
 FFI module is built upon FFCall, so I decided to make it easy to distribute
 FFCall on CPAN. :-)
 
-This module still needs docs and tests. :-(
+There is a project that provides an interface to libffi known as Ctypes, which
+should be coming out Real Soon Now. As far as I can tell, libffi is more robust
+than FFCall, and I would recommend using that when it becomes available. In the
+meantime, you should can use FFCall-based FFI.
 
 INSTALLATION
 
@@ -13,6 +20,7 @@ To install this module, run the following commands:
 
 	perl Build.PL
 	./Build
+	./Build test
 	./Build install
 
 SUPPORT AND DOCUMENTATION
