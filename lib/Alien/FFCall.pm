@@ -74,6 +74,9 @@ Alien::FFCall provides a CPAN distribution for the FFCall library. In other
 words, it installs FFCall's library in a non-system folder and provides you with
 the details necessary to include in and link to your C/XS code.
 
+For documentation on the FFCall's API, see
+L<http://www.haible.de/bruno/packages-ffcall.html>.
+
 =head1 AUTHOR
 
 David Mertens, C<< <dcmertens.perl at gmail.com> >>

@@ -27,7 +27,7 @@ SUPPORT AND DOCUMENTATION
 
 The best place to get help for this module is to file Issues on github:
 
-    https://github.com/run4flat/Alien-FFI/issues
+    https://github.com/run4flat/Alien-FFCall/issues
 
 Mostly, I don't expect that you'll want to use this module directly, but
 should look into FFI:
