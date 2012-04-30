@@ -4,5 +4,6 @@ lib/Alien/FFCall.pm
 MANIFEST This list of files
 ffcall-1.10.tar.gz
 t/00-load.t
-inc/Devel/CheckLib.pm
-t/10-compile-and-call.t
+
+META.yml
+META.json
