@@ -6,3 +6,4 @@ _build/
 _install/
 _share/
 blib/
+*.bak

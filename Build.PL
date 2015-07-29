@@ -1,9 +1,10 @@
 use strict;
 use warnings;
 
-use Alien::Base::ModuleBuild;
+use lib 'inc';
+use My::ModuleBuild;
 
-my $builder = Alien::Base::ModuleBuild->new(
+my $builder = My::ModuleBuild->new(
   'meta-spec' => {
     version => '2',
     url     => 'http://search.cpan.org/perldoc?CPAN::Meta::Spec',
@@ -12,11 +13,12 @@ my $builder = Alien::Base::ModuleBuild->new(
   dist_abstract => 'Build and install libffcall',
   license => 'perl',
   configure_requires => {
-    'Alien::Base' => 0.005,
+    'Alien::Base' => 0.021,
+    'parent'      => 0,
   },
   requires => {
     'perl' => '5.8.1',
-    'Alien::Base' => 0.005,
+    'Alien::Base' => 0.021,
   },
   dist_author => 'David Mertens <dcmertens.perl@gmail.com>',
   alien_name => 'ffcall',
