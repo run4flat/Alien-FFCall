@@ -4,4 +4,5 @@ MYMETA.yml
 _alien/
 _build/
 _install/
+_share/
 blib/

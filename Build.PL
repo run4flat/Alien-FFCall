@@ -12,11 +12,11 @@ my $builder = Alien::Base::ModuleBuild->new(
   dist_abstract => 'Build and install libffcall',
   license => 'perl',
   configure_requires => {
-    'Alien::Base' => 0,
+    'Alien::Base' => 0.005,
   },
   requires => {
     'perl' => '5.8.1',
-    'Alien::Base' => 0,
+    'Alien::Base' => 0.005,
   },
   dist_author => 'David Mertens <dcmertens.perl@gmail.com>',
   alien_name => 'ffcall',
@@ -25,10 +25,13 @@ my $builder = Alien::Base::ModuleBuild->new(
     pattern  => qr/ffcall-([\d.]+)\.tar\.gz$/,
   },
   alien_build_commands => [
-    '%pconfigure --prefix=%s --enable-shared', 
+    '%c --prefix=%s --enable-shared', 
     'make',
-    'make install'
   ],
+  alien_install_commands => [
+    'make install',
+  ],
+  alien_isolate_dynamic => 1,
   alien_provides_libs => '-lavcall -lcallback',
   resources => {
     bugtracker  => {
