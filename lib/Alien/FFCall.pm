@@ -3,7 +3,7 @@ package Alien::FFCall;
 use strict;
 use warnings;
 
-our $VERSION = "0.01_01";
+our $VERSION = "0.02";
 $VERSION = eval $VERSION;
 
 use parent 'Alien::Base';
@@ -18,9 +18,12 @@ Alien::FFCall - Alien library for FFCall
 
 =head1 SYNOPSIS
 
-I would encourage you to look at FFI.pm if you want a Perl-level wrapper to
-FFCall. However, if you want to write your own XS-based interface to FFCall,
-your Build.PL file should say:
+I would encourage you to look at L<FFI> if you want a Perl-level wrapper to
+FFCall. And generally you should be using L<FFI::Platypus> or L<FFI::Raw>
+rather than L<FFI>. That said, you're reading this document. So here goes.
+
+If you want to write your own XS-based interface to FFCall, your F<Build.PL>
+file should say:
 
  use strict;
  use warnings;
@@ -84,10 +87,11 @@ David Mertens, C<< <dcmertens.perl at gmail.com> >>
 The best place to report bugs or get help for this module is to file Issues on
 github:
 
-    https://github.com/run4flat/Alien-FFI/issues
+    https://github.com/run4flat/Alien-FFCall/issues
 
-Note that I do not maintain FFCall itself, only the Alien module for it. As I
-understand it, FFCall is no longer maintained. :-(
+Note that FFCall is no longer maintained and has been superseeded by
+libffi. Bear in mind, then, that I am the maintainer of this module, not
+FFCall itself.
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -98,5 +102,3 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
-
-
