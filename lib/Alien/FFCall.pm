@@ -48,8 +48,6 @@ Your module (.pm) file should look like this:
  use strict;
  use warnings;
  
- use Alien::FFCall;
- 
  our $VERSION = '0.01';
  
  require XSLoader;
