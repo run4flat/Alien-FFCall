@@ -9,7 +9,7 @@ my $builder = My::ModuleBuild->new(
   dist_abstract => 'Build and install libffcall',
   license => 'perl',
   configure_requires => {
-    'Alien::Base' => 0.021,
+    'Alien::Base::ModuleBuild' => 0.021,
     'parent'      => 0,
   },
   requires => {
